@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Recognize Me!</string>
+    <string name="preferences">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="hello">Hello World, Home!</string>
+    <string name="networks_found_msg">%d networks found</string>
+    <string name="wifi_is_not_enabled_msg">WiFi is not enabled</string>
+    <string name="msg_select">Select networks where you want to disable your lock pattern when you are connected.</string>
+    <string name="shutDown">Stop App</string>
+    <string name="about">About Recognize Me</string>
+    <string name="notify"> Show Notification icon on top</string>
+    <string name="unlock">Keep phone unlocked without Wi-Fi</string>
+    <string name="u">Tap to Lock</string>
+    <string name="l">Tap to Unlock</string>
+   	<string name="tap">Tap picture to unlock or lock phone without WiFi. Enable WiFi to add/remove networks.</string>
+</resources>

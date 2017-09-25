@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.lvcheck.activities"
+      android:versionCode="1"
+      android:versionName="1.0">
+      
+    <uses-sdk android:minSdkVersion="8" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.net.wifi.WIFI_STATE_CHANGED" />  
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-feature android:name="android.hardware.wifi" />
+   
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name">
+        
+        <activity
+            android:name=".Home"
+            android:label="@string/app_name"
+            android:icon="@drawable/app_icon">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+         <receiver android:name="WiFiReceiver" android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.wifi.supplicant.CONNECTION_CHANGE" />
+                <action android:name="android.net.wifi.supplicant.STATE_CHANGE" />
+            </intent-filter>
+        </receiver>
+        
+         <receiver
+			android:name=".MyAdmin"
+			android:permission="android.permission.BIND_DEVICE_ADMIN" >
+			<meta-data
+			android:name="android.app.device_admin"
+			android:resource="@xml/strings" />
+			<intent-filter>
+			<action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+			<action android:name="android.app.action.DEVICE_ADMIN_DISABLED" />
+			</intent-filter>
+		</receiver>
+        
+        <service android:name=".MyService"></service>
+    </application>
+</manifest>
